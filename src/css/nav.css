@@ -1,0 +1,18 @@
+header{
+	position: absolute;
+}
+
+.logo{
+	display: inline-block;
+	font-family: arial;
+	font-weight: 800;
+	top: -10px;
+	margin-left: 10px;
+}
+
+.logo2{
+	font-family: courier;
+	padding-left: 10px;
+	display: inline-block;
+	margin: 0;
+}
