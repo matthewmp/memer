@@ -11,3 +11,9 @@ export const set_bg_color = (bgColor) => ({
 	type: SET_BG_COLOR,
 	bgColor
 });
+
+export const EDIT_TEXT = 'EDIT_TEXT';
+export const edit_text = (txt) => ({
+	type: EDIT_TEXT,
+	txt
+});

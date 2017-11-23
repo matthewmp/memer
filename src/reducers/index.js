@@ -15,6 +15,11 @@ export const imageReducer = (state=initialState, action) => {
 			bgColor: action.bgColor
 		});
 	}
+	else if(action.type === actions.EDIT_TEXT){
+		return Object.assign({}, state, {
+			txt: action.txt
+		});
+	}
 	else{
 		return state;
 	}
