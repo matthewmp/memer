@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {HashRouter, Route} from 'react-router-dom';
 
 import store from './store';
 
@@ -13,7 +13,7 @@ import Editor from './components/Editor';
 
 ReactDOM.render(
 	<Provider store = {store}>
-		<Router>
+		<HashRouter>
 			<div>
 				<Route exact path = '/' component={App} />
 				<Route exact path = '/upload' component={Upload} />
@@ -23,7 +23,7 @@ ReactDOM.render(
 				
 				
 			</div>
-		</Router>
+		</HashRouter>
 	</Provider>, document.getElementById('root')
 );
 
