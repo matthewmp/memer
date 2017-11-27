@@ -1,0 +1,35 @@
+
+a{
+	text-decoration: none;
+}
+
+.landing-upper{
+	height: 70vh;
+	background: #fff;
+}
+
+.landing-lower{
+	position: relative;
+	height: calc(30vh - 50px);;
+	background: #8EE4AF;
+}
+
+.btn-get-started{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: block;
+	
+}
+
+.btn-main{
+	background: #F26444;
+	width: 200px;
+	height: 60px;
+	border-radius: 15px;
+	color: #fff;
+	font-size: 1.5em;
+	font-family: 'Roboto';
+	cursor: pointer;
+}

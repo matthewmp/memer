@@ -1,0 +1,21 @@
+header{
+	position: absolute;
+}
+
+.logo{
+	display: inline-block;
+	display: inline-block;
+    font-family: 'Bangers';
+    font-size: 2em;
+    margin: 10px 10px 0px 90px;
+    letter-spacing: 3px;
+    color: #222;
+}
+
+.logo2{
+	font-family: 'Roboto';
+	padding-left: 10px;
+	display: inline-block;
+	margin: 0;
+	color: #F26444;
+}
