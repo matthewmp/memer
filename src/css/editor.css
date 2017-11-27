@@ -5,18 +5,36 @@
 }
 
 .upper-editor{
+	display: flex;
 	width: 100%;
 	height: 70vh;
-	background: lightblue;
+}
+
+.img-wrapper{
+	max-width: 100%;
+	border: 10px solid pink;
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+}
+
+.img-wrapper p{
+	position: absolute;
+	bottom: 0px;
+	left: 5px;
+	font-family: arial;
+}
+
+#memed-img{
+	max-width: 100%;
 }
 
 .lower-editor{
 	position: relative;
 	width: 100%;
 	height: 30vh;
-	background: #eee;
 	text-align: center;
-	overflow: scroll;
 }
 
 .toolbar-wrapper{
@@ -26,17 +44,19 @@
 	transform: translate(-50%, -50%);
 	width: 100%;
 	height: 80px;
-	/*border: 1px solid #ccc;*/
 }
 
 .tool{
 	display: inline-block;
 	position: relative;
-	height: 80px;
-	width: 80px;
-	border: 1px solid lightblue;
+	height: 50px;
+	width: 50px;
 	margin: 15px 35px;
-	border-radius: 10px;
+	padding: 5px;
+	background: #fff;
+	border-bottom: 1px solid #8EE4AF;
+	border-top: 1px solid #8EE4AF;
+	color: #F26444;
 	cursor: pointer;
 }
 
@@ -49,16 +69,65 @@
     margin: 0;
 }
 
-@media only screen and (max-width: 780px){
+.meme-result-wrapper{
+	position: absolute;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(142,228,175,0.9);
+	text-align: center;
+}
+
+.meme-result-wrapper p{
+	margin-top: 50px;
+    font-size: 2em;
+    font-family: impact;
+    color: #000;
+}
+
+.meme-result-wrapper p:nth-child(3){
+	margin: 0;
+}
+
+#memeImg{
+	
+	position: absolute;
+	width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #F26444;
+}
+
+.btn-meme-it{
+	background: #222;
+	top: 5px;
+}
+
+@media only screen and (max-width: 1080px){
+  .meme-result-wrapper p{
+  	font-size: 3em;
+  }
+}
+
+@media only screen and (max-width: 795px){
   .tool{
   	max-width: 50px;
   	max-height: 50px;
   }
+
+  .meme-result-wrapper p{
+  	font-size: 2em;
+  }
 }
 
-@media only screen and (max-width: 630px){
+@media only screen and (max-width: 690px){
   .toolbar-wrapper{
   	max-width: 70%;
+  }
+
+  .meme-result-wrapper p{
+  	font-size: 1.5em;
   }
 }
 
@@ -72,7 +141,6 @@
 
 @media only screen and (max-width: 475px){
   .toolbar-wrapper{
-  	top: 25%;
   	max-width: 100%;
   }
 }

@@ -10,6 +10,7 @@ import Upload from './components/Upload';
 import Background from './components/Background';
 import Editor from './components/Editor';
 
+
 ReactDOM.render(
 	<Provider store = {store}>
 		<Router>
@@ -18,6 +19,8 @@ ReactDOM.render(
 				<Route exact path = '/upload' component={Upload} />
 				<Route exact path = '/set-background' component={Background} />
 				<Route exact path = '/editor' component={Editor} />
+				
+				
 				
 			</div>
 		</Router>

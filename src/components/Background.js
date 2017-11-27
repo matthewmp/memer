@@ -19,7 +19,6 @@ class Background extends React.Component{
 	}
 
 	render(){
-		console.log(this.props.bgColor)
 		return(
 			<section className="select-background">
 				<p className="p-select-background">
@@ -29,15 +28,17 @@ class Background extends React.Component{
 					</span>
 				</p>
 
-				<div className="bg-color-palette-wrapper">
-					<div className="bg-color" id="one" onClick={this.selectColor}></div>
-					<div className="bg-color" onClick={this.selectColor}></div>
-					<div className="bg-color" onClick={this.selectColor}></div>
-					<div className="bg-color" onClick={this.selectColor}></div>
-					<div className="bg-color" onClick={this.selectColor}></div>
-					<div className="bg-color" onClick={this.selectColor}></div>
-					<div className="bg-color" onClick={this.selectColor}></div>
-					<div className="bg-color" onClick={this.selectColor}></div>
+				<div className="bg-color-palette-container">
+					<div className="bg-color-palette-wrapper">
+						<div className="bg-color" onClick={this.selectColor}></div>
+						<div className="bg-color" onClick={this.selectColor}></div>
+						<div className="bg-color" onClick={this.selectColor}></div>
+						<div className="bg-color" onClick={this.selectColor}></div>
+						<div className="bg-color" onClick={this.selectColor}></div>
+						<div className="bg-color" onClick={this.selectColor}></div>
+						<div className="bg-color" onClick={this.selectColor}></div>
+						<div className="bg-color" onClick={this.selectColor}></div>
+					</div>
 				</div>
 			</section>
 		)

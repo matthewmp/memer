@@ -1,21 +1,21 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+
+import Slideshow from './Slideshow';
 import '../css/landing.css';
 
 
 const Landing = () => {
-
-
 	return (
 		<div>
 			<div className="landing-upper">
-				<div className="slideshow"></div>
+				<Slideshow />
 
 			</div>
 
 			<div className="landing-lower">
 				<Link to="/upload">
-					<button type="butotn" className="btn-get-started">Get Started</button>
+					<button type="butotn" className="btn-get-started btn-main">Get Started</button>
 				</Link>
 			</div>
 		</div>	

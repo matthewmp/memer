@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-
 import * as actions from '../actions';
 
 import '../css/upload.css';
@@ -59,7 +58,7 @@ class Upload extends React.Component{
 			<section className="upload-overlay">
 				<input type="file" accept="image/*" id="btn-file" onChange={this.fileChangeHandler} />
 				<div className="upload-btn-wrapper">
-					<button className="btn-upload" onClick={this.clickUpload}>Upload Image</button>
+					<button className="btn-upload btn-main" onClick={this.clickUpload}>Upload Image</button>
 					{iErr}
 				</div>
 			</section>
