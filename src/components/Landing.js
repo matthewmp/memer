@@ -10,7 +10,7 @@ const Landing = () => {
 		<div>
 			<div className="landing-upper">
 				<Slideshow />
-
+				<div className="steps">Upload, MEME, Downlad</div>
 			</div>
 
 			<div className="landing-lower">

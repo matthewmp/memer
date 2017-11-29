@@ -1,33 +1,32 @@
 
-
 export const loadCanvas = (state) => {
 	let canvas = document.getElementById('canvas');
-	let ctx = canvas.getContext('2d');
-	resize();
-	// Set Canvas Background Color
-	ctx.fillStyle = state.bgColor;
-	ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-	// Load Image
-	let img = new Image();
-	img.onload = function(){
-		let scaledImg = scale(img.width, img.height);
-
-		// Center Image
-		let imgX = (canvas.width / 2) - scaledImg.width / 2;
-    	let imgY = (canvas.height / 2) - scaledImg.height / 2;
-
-    	// Paint Canvas Background
+	if(canvas){	
+		let ctx = canvas.getContext('2d');
+		resize();
+		// Set Canvas Background Color
 		ctx.fillStyle = state.bgColor;
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-		// Draw Image to Canvas
-		ctx.drawImage(this,imgX, imgY, scaledImg.width, scaledImg.height);
-		loadMeme(state);
+		// Load Image
+		let img = new Image();
+		img.onload = function(){
+			let scaledImg = scale(img.width, img.height);
+
+			// Center Image
+			let imgX = (canvas.width / 2) - scaledImg.width / 2;
+	    	let imgY = (canvas.height / 2) - scaledImg.height / 2;
+
+	    	// Paint Canvas Background
+			ctx.fillStyle = state.bgColor;
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+			// Draw Image to Canvas
+			ctx.drawImage(this,imgX, imgY, scaledImg.width, scaledImg.height);
+			loadMeme(state);
+		}
+		img.src = state.dataURL
 	}
-	img.src = state.dataURL
-
-
 }
 
 export const loadMeme = (state) => {
