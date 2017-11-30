@@ -66,6 +66,11 @@
 	animation: show 800ms ease-in forwards;
 }
 
+.gh{
+	border-top: 1px solid white;
+    padding-top: 25px;
+}
+
 @keyframes show{
 	 from {
 	   width: 0px;

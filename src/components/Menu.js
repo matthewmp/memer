@@ -56,6 +56,11 @@ export default class Menu extends React.Component{
 							<i className="fa fa-tasks menu-item" aria-hidden="true" alt="sdf" title="Editor"></i>
 						</div>
 					</Link>
+					<div className="menu-item-wrapper gh">
+						<a href="https://github.com/mmpal78">
+							<i className="fa fa-github-square menu-item" aria-hidden="true" alt="sdf" title="Code"></i>
+						</a>
+					</div>
 				</div>
 			</div>
 		)
