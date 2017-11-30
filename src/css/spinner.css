@@ -3,7 +3,7 @@
   position: absolute;
   width: 100vw;
   height: calc(100vh - 45px);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 1);
 }
 
 #cont{
