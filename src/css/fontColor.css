@@ -13,8 +13,9 @@
 
 .p-select-font-color{
 	font-family: arial;
-	color: orangered;
+	color: #F26444;
 	text-align: center;
+	text-decoration: underline;
 }
 
 .font-color-palette-wrapper{

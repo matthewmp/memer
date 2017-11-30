@@ -27,7 +27,7 @@ class TextEditor extends React.Component{
 }
 
 const mapStateToProps = (state, props) => ({
-	memeTxt: state
+	memeTxt: state.txt
 })
 
 export default connect(mapStateToProps)(TextEditor);

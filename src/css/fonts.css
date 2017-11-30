@@ -16,6 +16,16 @@ ul li{
     cursor: pointer;
 }
 
+.select-font{
+    min-width: 100%;
+    margin: auto;
+    font-family: 'Roboto';
+    text-decoration: underline;
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: #F26444;
+}
+
 li:active{
 	background: rgba(255,0,250,0.5);
 	color: #fff;
@@ -58,16 +68,16 @@ li:nth-child(8){
 }
 
 .x-close{
+    width: 30px;
 	font-family: arial;
     font-size: 30px;
     padding: 10px;
     position: absolute;
-    left: 20px;
     cursor: pointer;
 }
 
 @media only screen and (max-width: 429px){
-  ul li{
+  ul li, .select-font{
   	font-size: 1.5em;
   }
 }

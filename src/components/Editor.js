@@ -86,7 +86,7 @@ class Editor extends React.Component{
 
 		let result = this.state.showResult ? <article className="meme-result-wrapper">
 				   								 <div className="x-close" onClick={this.toggleResult}>X</div>
-				   								 <p>Right Click to Download</p> <p>Your MEME! </p>
+				   								 <p>Right Click to Download Your MEME! </p>
 												<img id="memeImg" src={this.props.state.imgURL} alt="Your Meme!"/>
 											</article> : undefined;
 		return(
@@ -99,7 +99,7 @@ class Editor extends React.Component{
 					<div className="toolbar-wrapper">
 						<article className="edit-text tool" onClick={this.toggleTextEditor}>
 							<p className="tool-icon">
-								<i className="fa fa-comments-o fa-lg" aria-hidden="true"></i>
+								<i className="fa fa-pencil fa-lg" aria-hidden="true"></i>
 							</p>
 						</article>
 						<article className="edit-font tool" onClick={this.toggleFont}>
@@ -119,7 +119,7 @@ class Editor extends React.Component{
 						</article>
 						<article className="edit-stroke tool" onClick={this.toggleStroke}>
 							<p className="tool-icon">
-								<i className="fa fa-strikethrough fa-lg" aria-hidden="true"></i>
+								S
 							</p>
 						</article>
 					</div>

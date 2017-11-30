@@ -20,7 +20,7 @@ class Stroke extends React.Component{
 				<div className="stroke-wrapper">
 					<form id="strokeForm">
 						<div className="wrapper-stroke-slider">
-							<label className="lbl-stroke"> S </label>
+							<label className="lbl-slider"> Stroke Size </label>
 							<input type="range" ref="stroke" className="inp-slider" 
 							min="0" max="10"
 							onChange={this.setStroke} />

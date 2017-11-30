@@ -69,6 +69,11 @@
     margin: 0;
 }
 
+.tool-icon:last-child{
+	font-weight: 800;
+}
+
+
 .meme-result-wrapper{
 	position: absolute;
 	top: 0;
@@ -79,7 +84,11 @@
 }
 
 .meme-result-wrapper p{
-	margin-top: 50px;
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	z-index: 10;
     font-size: 2em;
     font-family: impact;
     color: #000;
@@ -151,11 +160,18 @@
   .toolbar-wrapper{
   	max-width: 100%;
   }
+
+  .tool-icon{
+  	font-size: 1.3em;
+  }
+
+  .meme-result-wrapper p{
+  	font-size: 1em;
+  }
 }
 
-  @media only screen and (max-width: 380px){
+@media only screen and (max-width: 380px){
   .toolbar-wrapper{
-  	/*top: 15%;*/
   	max-width: 100%;
   }
 }

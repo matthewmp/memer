@@ -3,7 +3,7 @@ import * as actions from '../actions';
 export const initialState = {
 	dataURL: '',
 	imgURL: '',
-	txt: 'YOUR TEXT HERE',
+	txt: '',
 	bgColor: '#aaa',
 	font: 'impact',
 	fontColor: '#fff',

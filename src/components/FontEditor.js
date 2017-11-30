@@ -20,6 +20,7 @@ class Fonts extends React.Component{
 			<article className="font-selector">
 				<div className="x-close" onClick={this.props.toggle}>X</div>
 				<ul>
+					<p className="select-font"> Select Font </p>
 					<li onClick={this.setFont}> Frijole </li>
 					<li onClick={this.setFont}> Bangers </li>
 					<li onClick={this.setFont}> Creepster </li>
