@@ -69,7 +69,6 @@ function scale(width, height){
       let hRatio = cHeight / height -0.01;
       newWidth = width * hRatio;
       newHeight = height * hRatio;
-      console.log(newWidth, newHeight)
       if(newWidth > cWidth){
         let wRatio = cWidth / newWidth;
         newHeight = newHeight * wRatio;

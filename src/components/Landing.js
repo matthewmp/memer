@@ -2,10 +2,12 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import Slideshow from './Slideshow';
+import Spinner from './Spinner';
 import '../css/landing.css';
 
 
 const Landing = () => {
+	
 	return (
 		<div>
 			<div className="landing-upper">
@@ -15,7 +17,7 @@ const Landing = () => {
 
 			<div className="landing-lower">
 				<Link to="/upload">
-					<button type="butotn" className="btn-get-started btn-main">Get Started</button>
+					<button type="button" className="btn-get-started btn-main">Get Started</button>
 				</Link>
 			</div>
 		</div>	

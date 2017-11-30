@@ -11,7 +11,6 @@ export default class Menu extends React.Component{
 		}
 	}
 	toggleMenu = () => {
-		console.log(this.state)
 		this.setState({
 			showMenu: !this.state.showMenu,
 			count: 1
@@ -38,7 +37,7 @@ export default class Menu extends React.Component{
 				<div className={classes} ref="slideMenu">
 					<Link to="/">
 						<div className="menu-item-wrapper">
-							<i class="fa fa-home menu-item" aria-hidden="true" title="Home"></i>
+							<i className="fa fa-home menu-item" aria-hidden="true" title="Home"></i>
 						</div>
 					</Link>	
 					<Link to="/upload">
