@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions';
 
+import Menu from './Menu';
 import '../css/upload.css';
 
 class Upload extends React.Component{
@@ -56,6 +57,7 @@ class Upload extends React.Component{
 		let iErr = this.state.imgError ? <p className="img-error">...hmm, try again...</p> : undefined;
 		return(
 			<section className="upload-overlay">
+				<Menu />
 				<input type="file" accept="image/*" id="btn-file" onChange={this.fileChangeHandler} />
 				<div className="upload-btn-wrapper">
 					<button className="btn-upload btn-main" onClick={this.clickUpload}>Upload Image</button>

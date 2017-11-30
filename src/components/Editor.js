@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions';
 
+import Menu from './Menu';
 import TextEditor from './TextEditor';
 import Fonts from './FontEditor';
 import FontColorEditor from './FontColorEditor';
@@ -91,6 +92,7 @@ class Editor extends React.Component{
 											</article> : undefined;
 		return(
 			<section className="editor">
+				<Menu />
 				<div className="upper-editor" id="canvasWrapper">
 					<Canvas update={this.update} ref="canvas" />
 				</div>

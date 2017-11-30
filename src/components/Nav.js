@@ -9,7 +9,7 @@ const Nav = () => {
 				<Link to="/"> 
 					<h3 className="logo">MEMER</h3>
 				</Link>
-				<h6 className="logo2">Meme Generator ...Image AWESOMEIFIER</h6>
+				<h6 className="logo2">Meme Generator <span>...Image AWESOMEIFIER</span></h6>
 			</nav>
 		</header>
 	)

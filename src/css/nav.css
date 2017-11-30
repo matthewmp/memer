@@ -7,7 +7,7 @@ header{
 	display: inline-block;
     font-family: 'Bangers';
     font-size: 2em;
-    margin: 10px 10px 0px 90px;
+    margin: 8px 10px 0px 80px;
     letter-spacing: 3px;
     color: #222;
 }
@@ -18,4 +18,17 @@ header{
 	display: inline-block;
 	margin: 0;
 	color: #F26444;
+}
+
+@media only screen and (max-width: 568px){
+  .logo2 span{
+  	display: none;
+  }
+}
+
+
+@media only screen and (max-width: 285px){
+  .logo2{
+  	display: none;
+  }
 }

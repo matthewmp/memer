@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions';
 
+import Menu from './Menu';
 import '../css/background.css';
 class Background extends React.Component{
 
@@ -21,6 +22,7 @@ class Background extends React.Component{
 	render(){
 		return(
 			<section className="select-background">
+				<Menu />
 				<p className="p-select-background">
 					Select Background
 					<span className="p-background-message">
