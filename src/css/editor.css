@@ -135,7 +135,15 @@
 @media only screen and (max-width: 540px){
   .toolbar-wrapper{
   	max-width: 80%;
+  	margin-top: 30px;
   }
+
+  .tool{
+		height: 40px;
+		width: 40px;
+		margin: 10px;
+		padding: 0px;
+	}
 }
 
 
