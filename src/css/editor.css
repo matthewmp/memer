@@ -31,6 +31,7 @@
 }
 
 .lower-editor{
+	overflow: auto;
 	background: #8EE4AF;
 	position: relative;
 	width: 100%;
@@ -115,6 +116,11 @@
 	top: 5px;
 }
 
+.p-text{
+	font-size: 1.4em;
+	color: #000;
+}
+
 @media only screen and (max-width: 1080px){
   .meme-result-wrapper p{
   	font-size: 3em;
@@ -140,6 +146,10 @@
   .meme-result-wrapper p{
   	font-size: 1.5em;
   }
+
+  .p-text{
+  	font-size: 1em;
+  }
 }
 
 
@@ -149,18 +159,18 @@
   	margin-top: 30px;
   }
 
-  .tool{
-		height: 40px;
-		width: 40px;
-		margin: 10px;
-		padding: 0px;
-	}
 }
 
 
-@media only screen and (max-width: 475px){
+@media (max-height: 500px)  and (max-width: 745px){
   .toolbar-wrapper{
   	max-width: 100%;
+  	top: 70%;
+  }
+
+  .tool{
+  	width: 2em;
+  	height: 2em;
   }
 
   .tool-icon{
@@ -177,3 +187,12 @@
   	max-width: 100%;
   }
 }
+
+@media only screen and (max-height: 595px) {
+	.toolbar-wrapper{
+	  	top: 80%;
+	}
+}
+
+/* #8EE4AF */
+/* #F26444 */

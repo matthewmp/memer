@@ -35,24 +35,32 @@ class Sliders extends React.Component{
 			<section className="select-sliders">
 			<div className="x-close" onClick={this.props.toggle}>X</div>
 				<div className="sliders-wrapper">
-					<p className="position-text"> Position Text </p>
+					<p className="position-text p-text"> Position Text </p>
 					<form id="slidersForm">
 						<div className="wrapper-font-size-slider">
-							<label className="lbl-slider"> Size </label>
+							<label className="lbl-slider"> 
+								<i class="fa fa-text-height pos-scale" aria-hidden="true"></i>
+							</label>
 							<input type="range" ref="fontSize" className="inp-slider" 
 							min="25" max="200" step="0.1" 
 							onChange={this.setFontSize} />
 						</div>
 
 						<div className="wrapper-font-posX-slider">
-							<label className="lbl-slider"> Position X </label>
+							<label className="lbl-slider"> 
+								<i class="fa fa-arrow-circle-left pos-chev" aria-hidden="true"></i>
+								<i class="fa fa-arrow-circle-right pos-chev" aria-hidden="true"></i>
+							</label>
 							<input type="range" ref="fontPosX" className="inp-slider" 
 							min="0" max="100" id="inpX"
 							onChange={this.setPosX} />
 						</div>
 
 						<div className="wrapper-font-posY-slider">
-							<label className="lbl-slider"> Position Y </label>
+							<label className="lbl-slider"> 
+								<i class="fa fa-arrow-circle-up pos-chev" aria-hidden="true"></i>
+								<i class="fa fa-arrow-circle-down pos-chev" aria-hidden="true"></i>
+							</label>
 							<input type="range" ref="fontPosY" className="inp-slider" 
 							min="0" max="100" id="inpY"
 							onChange={this.setPosY} />

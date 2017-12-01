@@ -1,3 +1,5 @@
+
+
 .select-font-color{
 	position: absolute;
     width: 100%;
@@ -19,9 +21,10 @@
 }
 
 .font-color-palette-wrapper{
+	overflow: auto;
 	height: 30vh;
 	width: 100%;
-	background: #fff;
+	background: #8EE4AF;
 	position: absolute;
 	bottom: 0;
 	text-align: center;	
@@ -31,7 +34,7 @@
 	min-height: 50px;
 	min-width: 50px;
 	margin: 20px 20px;
-	border: 1px solid #ccc;
+	border: 3px solid #fff;
 	border-radius: 50%;
 	display: inline-block;
 	cursor: pointer;

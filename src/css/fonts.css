@@ -1,9 +1,10 @@
 .font-selector{
+    overflow: auto;
 	position: absolute;
     width: 100%;
     height: 70vh;
     bottom: 0;
-    background: #fff;
+    background: #8EE4AF;
     text-align: center;
 }
 
@@ -14,6 +15,7 @@ ul li{
     font-size: 2em;
     padding: 10px;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .select-font{
@@ -27,12 +29,12 @@ ul li{
 }
 
 li:active{
-	background: rgba(255,0,250,0.5);
+	background: rgba(242, 100, 68, 1);
 	color: #fff;
 }
 
 li:hover{
-	border: 1px solid #00ffaa;
+	border: 1px solid #fff;
 }
 
 li:first-child{
