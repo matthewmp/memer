@@ -37,7 +37,7 @@ export default class Menu extends React.Component{
 				<div className={classes} ref="slideMenu">
 					<Link to="/">
 						<div className="menu-item-wrapper">
-							<i className="fa fa-home menu-item" aria-hidden="true" title="Home"></i>
+							<i className="fa fa-home menu-item menu-home" aria-hidden="true" title="Home"></i>
 						</div>
 					</Link>	
 					<Link to="/upload">

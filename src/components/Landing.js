@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import Slideshow from './Slideshow';
-import Spinner from './Spinner';
 import '../css/landing.css';
 
 

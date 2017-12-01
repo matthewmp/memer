@@ -27,7 +27,6 @@ export default class Slideshow extends React.Component{
 			images.push(<Img src={require(`../images/${ranNum}meme.jpg`)} load={this.inc} key={i} />);
 		}
 		
-		console.log(this.state.loaded)
 		return(
 
 			<section className="slideshow-container">

@@ -98,3 +98,17 @@
   	font-size: 1.6em;
   }
 }
+
+@media only screen and (max-height: 500px){
+  .menu-item-wrapper:first-child{
+  	margin-top: 20px;
+  }
+
+  .menu-item{
+  	font-size: 1em;
+  }
+
+  .menu-home{
+  	margin-top: 50px;
+  }
+}
