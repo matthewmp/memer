@@ -39,7 +39,7 @@ class Sliders extends React.Component{
 					<form id="slidersForm">
 						<div className="wrapper-font-size-slider">
 							<label className="lbl-slider"> 
-								<i class="fa fa-text-height pos-scale" aria-hidden="true"></i>
+								<i className="fa fa-text-height pos-scale" aria-hidden="true"></i>
 							</label>
 							<input type="range" ref="fontSize" className="inp-slider" 
 							min="25" max="200" step="0.1" 
@@ -48,8 +48,8 @@ class Sliders extends React.Component{
 
 						<div className="wrapper-font-posX-slider">
 							<label className="lbl-slider"> 
-								<i class="fa fa-arrow-circle-left pos-chev" aria-hidden="true"></i>
-								<i class="fa fa-arrow-circle-right pos-chev" aria-hidden="true"></i>
+								<i className="fa fa-arrow-circle-left pos-chev" aria-hidden="true"></i>
+								<i className="fa fa-arrow-circle-right pos-chev" aria-hidden="true"></i>
 							</label>
 							<input type="range" ref="fontPosX" className="inp-slider" 
 							min="0" max="100" id="inpX"
@@ -58,8 +58,8 @@ class Sliders extends React.Component{
 
 						<div className="wrapper-font-posY-slider">
 							<label className="lbl-slider"> 
-								<i class="fa fa-arrow-circle-up pos-chev" aria-hidden="true"></i>
-								<i class="fa fa-arrow-circle-down pos-chev" aria-hidden="true"></i>
+								<i className="fa fa-arrow-circle-up pos-chev" aria-hidden="true"></i>
+								<i className="fa fa-arrow-circle-down pos-chev" aria-hidden="true"></i>
 							</label>
 							<input type="range" ref="fontPosY" className="inp-slider" 
 							min="0" max="100" id="inpY"

@@ -153,12 +153,20 @@
 }
 
 
-@media only screen and (max-width: 540px){
-  .toolbar-wrapper{
-  	max-width: 80%;
-  	margin-top: 30px;
-  }
+@media only screen and (max-width: 570px){
+	.toolbar-wrapper{
+		max-width: 80%;
+		margin-top: 30px;
+	}
 
+	.tool{
+  		width: 1em;
+  		height: 1em;	
+  	}
+
+  	.tool-icon{
+  		font-size: 1em;
+  	}
 }
 
 

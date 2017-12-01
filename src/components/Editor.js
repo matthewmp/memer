@@ -72,8 +72,13 @@ class Editor extends React.Component{
 	}
 
 	memeIt = () => {
+		let link = document.createElement('a');
+		link.download = 'MEMER';
 		let canvas = document.getElementById('canvas');
 		let imgURL = canvas.toDataURL("image/png");
+		link.href = imgURL;
+		link.click();
+		console.log('Should be downloading Biatch')
 		this.props.dispatch(actions.set_meme_result(imgURL));
 		this.toggleResult();
 	}
@@ -87,7 +92,7 @@ class Editor extends React.Component{
 
 		let result = this.state.showResult ? <article className="meme-result-wrapper">
 				   								 <div className="x-close" onClick={this.toggleResult}>X</div>
-				   								 <p>Right Click to Download Your MEME! </p>
+				   								 <p><span>If your MEME did not download...</span>Right Click and Save! </p>
 												<img id="memeImg" src={this.props.state.imgURL} alt="Your Meme!"/>
 											</article> : undefined;
 		return(
