@@ -44,16 +44,37 @@ export const imageReducer = (state=initialState, action) => {
 			fontSize: action.fontSize
 		});
 	}
-	else if(action.type === actions.EDIT_POSX){
+	// else if(action.type === actions.EDIT_POSX){
+	// 	return Object.assign({}, state, {
+	// 		posX: action.posX
+	// 	});
+	// }
+	// else if(action.type === actions.EDIT_POSY){
+	// 	return Object.assign({}, state, {
+	// 		posY: action.posY
+	// 	});
+	// }
+	else if(action.type === actions.MOVE_UP){
 		return Object.assign({}, state, {
-			posX: action.posX
-		});
+			posY: state.posY - 5
+		})
 	}
-	else if(action.type === actions.EDIT_POSY){
+	else if(action.type === actions.MOVE_DOWN){
 		return Object.assign({}, state, {
-			posY: action.posY
-		});
+			posY: state.posY + 5
+		})
 	}
+	else if(action.type === actions.MOVE_LEFT){
+		return Object.assign({}, state, {
+			posX: state.posX - 5
+		})
+	}
+	else if(action.type === actions.MOVE_RIGHT){
+		return Object.assign({}, state, {
+			posX: state.posX + 5
+		})
+	}
+
 	else if(action.type === actions.EDIT_STROKE){
 		return Object.assign({}, state, {
 			strokeSize: action.stroke

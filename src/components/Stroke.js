@@ -9,7 +9,12 @@ class Stroke extends React.Component{
 	setStroke = () => {
 		let stroke = this.refs.stroke.value;
 		this.props.dispatch(actions.edit_stroke(stroke))
-	}
+	};
+
+	setFontSize = () => {
+		let fontSize = this.refs.fontSize.value;
+		this.props.dispatch(actions.edit_font_size(fontSize));
+	};
 
 	render() {
 		return(
@@ -22,6 +27,15 @@ class Stroke extends React.Component{
 							<input type="range" ref="stroke" className="inp-slider" 
 							min="0" max="10"
 							onChange={this.setStroke} />
+						</div>
+
+						<div className="wrapper-font-size-slider">
+							<label className="lbl-slider"> 
+								Font Size
+							</label>
+							<input type="range" ref="fontSize" className="inp-slider" 
+							min="25" max="200" step="0.1" 
+							onChange={this.setFontSize} />
 						</div>
 					</form>
 				</div>	

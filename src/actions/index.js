@@ -42,16 +42,36 @@ export const edit_font_size = (fontSize) => ({
 	fontSize
 });
 
-export const EDIT_POSX = 'EDIT_POSX';
-export const edit_posX = (posX) => ({
-	type: EDIT_POSX,
-	posX
+// export const EDIT_POSX = 'EDIT_POSX';
+// export const edit_posX = (posX) => ({
+// 	type: EDIT_POSX,
+// 	posX
+// });
+
+// export const EDIT_POSY = 'EDIT_POSY';
+// export const edit_posY = (posY) => ({
+// 	type: EDIT_POSY,
+// 	posY
+// });
+
+export const MOVE_UP = 'MOVE_UP';
+export const move_up = () => ({
+	type: MOVE_UP
 });
 
-export const EDIT_POSY = 'EDIT_POSY';
-export const edit_posY = (posY) => ({
-	type: EDIT_POSY,
-	posY
+export const MOVE_DOWN = 'MOVE_DOWN';
+export const move_down = () => ({
+	type: MOVE_DOWN
+});
+
+export const MOVE_RIGHT = 'MOVE_RIGHT';
+export const move_right = () => ({
+	type: MOVE_RIGHT
+});
+
+export const MOVE_LEFT = 'MOVE_LEFT';
+export const move_left = () => ({
+	type: MOVE_LEFT
 });
 
 export const EDIT_STROKE = 'EDIT_STROKE';
