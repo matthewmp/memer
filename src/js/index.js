@@ -22,7 +22,6 @@ export const loadCanvas = (state) => {
 			ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 			// Draw Image to Canvas
-			if(state.crop){canvas.width = scaledImg.width, canvas.height = scaledImg.height}
 			ctx.drawImage(this,imgX, imgY, scaledImg.width, scaledImg.height);
 			loadMeme(state);
 		}

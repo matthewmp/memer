@@ -43,26 +43,16 @@ class Sliders extends React.Component{
 	keyDown = (e) => {
 		e.preventDefault();
 		let direction = e.target.classList[1];
-		direction.search('up') >= 0 ? this.setInt(this.moveUp) : undefined;
-		direction.search('down') >= 0 ? this.setInt(this.moveDown) : undefined;
-		direction.search('left') >= 0 ? this.setInt(this.moveLeft) : undefined;
-		direction.search('right') >= 0 ? this.setInt(this.moveRight) : undefined;
+		direction.search('up') >= 0 ? this.setInt(this.moveUp) : console.log('adjusting position');
+		direction.search('down') >= 0 ? this.setInt(this.moveDown) : console.log('adjusting position');
+		direction.search('left') >= 0 ? this.setInt(this.moveLeft) : console.log('adjusting position');
+		direction.search('right') >= 0 ? this.setInt(this.moveRight) : console.log('adjusting position');
 	};
 
 	keyUp = (e) => {
 		e.preventDefault();
 		clearInterval(this.state.interval);
 	};
-
-	// setPosX = () => {
-	// 	let posX = this.refs.fontPosX.value;
-	// 	this.props.dispatch(actions.edit_posX(posX));
-	// }
-
-	// setPosY = () => {
-	// 	let posY = this.refs.fontPosY.value;
-	// 	this.props.dispatch(actions.edit_posY(posY));
-	// }
 
 	render() {
 		
@@ -80,38 +70,6 @@ class Sliders extends React.Component{
 					<div className="arrow-down" onClick={this.moveDown} onMouseDown={this.keyDown} onMouseUp={this.keyUp}>
 						<i className="fa fa-arrow-circle-down pos-chev" aria-hidden="true"></i>
 					</div>
-
-
-					{/*<form id="slidersForm">
-						<div className="wrapper-font-size-slider">
-							<label className="lbl-slider"> 
-								<i className="fa fa-text-height pos-scale" aria-hidden="true"></i>
-							</label>
-							<input type="range" ref="fontSize" className="inp-slider" 
-							min="25" max="200" step="0.1" 
-							onChange={this.setFontSize} />
-						</div>
-
-						<div className="wrapper-font-posX-slider">
-							<label className="lbl-slider"> 
-								<i className="fa fa-arrow-circle-left pos-chev" aria-hidden="true"></i>
-								<i className="fa fa-arrow-circle-right pos-chev" aria-hidden="true"></i>
-							</label>
-							<input type="range" ref="fontPosX" className="inp-slider" 
-							min="0" max="100" id="inpX"
-							onChange={this.setPosX} />
-						</div>
-
-						<div className="wrapper-font-posY-slider">
-							<label className="lbl-slider"> 
-								<i className="fa fa-arrow-circle-up pos-chev" aria-hidden="true"></i>
-								<i className="fa fa-arrow-circle-down pos-chev" aria-hidden="true"></i>
-							</label>
-							<input type="range" ref="fontPosY" className="inp-slider" 
-							min="0" max="100" id="inpY"
-							onChange={this.setPosY} />
-						</div>
-					</form>*/}
 				</div>	
 			</section>
 		)
