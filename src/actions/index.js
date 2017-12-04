@@ -42,17 +42,17 @@ export const edit_font_size = (fontSize) => ({
 	fontSize
 });
 
-// export const EDIT_POSX = 'EDIT_POSX';
-// export const edit_posX = (posX) => ({
-// 	type: EDIT_POSX,
-// 	posX
-// });
+export const EDIT_POSX = 'EDIT_POSX';
+export const edit_posX = (posX) => ({
+	type: EDIT_POSX,
+	posX
+});
 
-// export const EDIT_POSY = 'EDIT_POSY';
-// export const edit_posY = (posY) => ({
-// 	type: EDIT_POSY,
-// 	posY
-// });
+export const EDIT_POSY = 'EDIT_POSY';
+export const edit_posY = (posY) => ({
+	type: EDIT_POSY,
+	posY
+});
 
 export const MOVE_UP = 'MOVE_UP';
 export const move_up = () => ({

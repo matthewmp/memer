@@ -103,5 +103,11 @@ function resize(){
 	
 	canvas.width = parseInt(wrapperWidth, 10) * .998;
 	canvas.height = parseInt(wrapperHeight, 10) * .998;
+}
 
+// Get Centerish of Canvas
+export const getCtr = () => {
+	let canvas = document.getElementById('canvas');
+	let center = canvas ? {x: canvas.width/2, y: canvas.height/2} : null;
+	return center;
 }
