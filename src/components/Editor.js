@@ -77,9 +77,11 @@ class Editor extends React.Component{
 		let canvas = document.getElementById('canvas');
 		let imgURL = canvas.toDataURL("image/png");
 		link.href = imgURL;
+		link.setAttribute('target', '_blank');
+		document.body.appendChild(link);
 		link.click();
-		console.log('Should be downloading Biatch')
 		this.props.dispatch(actions.set_meme_result(imgURL));
+		document.body.removeChild(link);
 		this.toggleResult();
 	}
 
@@ -91,7 +93,7 @@ class Editor extends React.Component{
 		let stroke = this.state.showStroke ? <Stroke toggle={this.toggleStroke} /> : undefined;
 
 		let result = this.state.showResult ? <article className="meme-result-wrapper">
-				   								 <div className="x-close" onClick={this.toggleResult}>X</div>
+				   								 <div className="x-close" onClick={this.toggleResult}><span>X</span></div>
 				   								 <p><span>If your MEME did not download...</span>Right Click and Save! </p>
 												<img id="memeImg" src={this.props.state.imgURL} alt="Your Meme!"/>
 											</article> : undefined;
