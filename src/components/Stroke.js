@@ -19,7 +19,7 @@ class Stroke extends React.Component{
 	render() {
 		return(
 			<section className="select-stroke">
-			<div className="x-close" onClick={this.props.toggle}>X</div>
+			<div className="x-close" onClick={this.props.toggle}><span>X</span></div>
 				<div className="stroke-wrapper">
 					<form id="strokeForm">
 						<div className="wrapper-stroke-slider">

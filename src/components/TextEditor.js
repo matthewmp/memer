@@ -15,7 +15,7 @@ class TextEditor extends React.Component{
 	render(){
 		return(
 			<article className="text-editor">
-				<div className="x-close text-close" onClick={this.props.toggle}>X</div>
+				<div className="x-close text-close" onClick={this.props.toggle}><span>X</span></div>
 				<form id="text-form">
 					<input type="text" id="inp-txt-add" placeholder="Enter Text Here" ref="textValue" />
 					<button type="click" id="btn-txt-submit" onClick={this.setMemeText}>submit</button>

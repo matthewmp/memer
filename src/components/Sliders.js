@@ -49,7 +49,7 @@ class Sliders extends React.Component{
 		
 		return(
 			<section className="select-sliders">
-			<div className="x-close" onClick={this.props.toggle}>X</div>
+			<div className="x-close" onClick={this.props.toggle}><span>X</span></div>
 				<div className="sliders-wrapper">
 					<div className="arrow-up" onClick={this.moveUp}>
 						<i className="fa fa-arrow-circle-up pos-chev" aria-hidden="true"></i>

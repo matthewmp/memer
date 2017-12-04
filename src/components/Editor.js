@@ -119,14 +119,14 @@ class Editor extends React.Component{
 								<i className="fa fa-paint-brush fa-lg" aria-hidden="true"></i>
 							</p>
 						</article>
-						<article className="edit-font-size-position tool" onClick={this.toggleSliders}>
-							<p className="tool-icon">
-								<i className="fa fa-sliders fa-lg" aria-hidden="true"></i>
-							</p>
-						</article>
 						<article className="edit-stroke tool" onClick={this.toggleStroke}>
 							<p className="tool-icon">
 								S
+							</p>
+						</article>
+						<article className="edit-font-size-position tool" onClick={this.toggleSliders}>
+							<p className="tool-icon">
+								<i className="fa fa-sliders fa-lg" aria-hidden="true"></i>
 							</p>
 						</article>
 					</div>

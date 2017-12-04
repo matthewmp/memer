@@ -20,7 +20,7 @@ class Background extends React.Component{
 	render(){
 		return(
 			<section className="select-font-color">
-			<div className="x-close" onClick={this.props.toggle}>X</div>
+			<div className="x-close" onClick={this.props.toggle}><span>X</span></div>
 				<div className="font-color-palette-wrapper">
 					<p className="p-select-font-color p-text">
 						Select Font Color

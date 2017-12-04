@@ -69,15 +69,6 @@ li:nth-child(8){
 	font-family: 'Syncopate';
 }
 
-.x-close{
-    width: 30px;
-	font-family: arial;
-    font-size: 30px;
-    padding: 10px;
-    position: absolute;
-    cursor: pointer;
-}
-
 @media only screen and (max-width: 429px){
   ul li, .select-font{
   	font-size: 1em;
