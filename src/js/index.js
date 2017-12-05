@@ -1,15 +1,20 @@
 
+let img;
+
 export const loadCanvas = (state) => {
 	let canvas = document.getElementById('canvas');
 	if(canvas){	
 		let ctx = canvas.getContext('2d');
+		
 		resize();
+		
+
 		// Set Canvas Background Color
 		ctx.fillStyle = state.bgColor;
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 		// Load Image
-		let img = new Image();
+		img = new Image();
 		img.onload = function(){
 			let scaledImg = scale(img.width, img.height);
 
@@ -21,11 +26,19 @@ export const loadCanvas = (state) => {
 			ctx.fillStyle = state.bgColor;
 			ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+			// If user selects crop have canvas match natural size of picture
+			if(state.crop){
+				canvas.width = scaledImg.width;
+				canvas.height = scaledImg.height;
+				imgX = 0;
+				imgY = 0;
+			}
+			console.log('Drawing ', scaledImg.width)
 			// Draw Image to Canvas
 			ctx.drawImage(this,imgX, imgY, scaledImg.width, scaledImg.height);
 			loadMeme(state);
 		}
-		img.src = state.dataURL
+		img.src = state.dataURL;
 	}
 }
 
@@ -109,4 +122,9 @@ export const getCtr = () => {
 	let canvas = document.getElementById('canvas');
 	let center = canvas ? {x: canvas.width/2, y: canvas.height/2} : null;
 	return center;
+}
+
+// Get Centerish of Img
+export const getImgCtr = () => {
+	return {x: img.width/2, y: img.height/2}
 }

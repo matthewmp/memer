@@ -7,6 +7,7 @@ import store from './store';
 
 import App from './App';
 import Upload from './components/Upload';
+import Search from './components/Search';
 import Background from './components/Background';
 import Editor from './components/Editor';
 
@@ -17,6 +18,7 @@ ReactDOM.render(
 			<div>
 				<Route exact path = '/' component={App} />
 				<Route exact path = '/upload' component={Upload} />
+				<Route exact path = '/search' component={Search} />
 				<Route exact path = '/set-background' component={Background} />
 				<Route exact path = '/editor' component={Editor} />
 				

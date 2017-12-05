@@ -45,6 +45,11 @@ export default class Menu extends React.Component{
 							<i className="fa fa-upload menu-item" aria-hidden="true" title="Upload Image"></i>
 						</div>
 					</Link>
+					<Link to="/search">
+						<div className="menu-item-wrapper">
+							<i className="fa fa-search menu-item" aria-hidden="true" title="Search Images"></i>
+						</div>
+					</Link>
 					<Link to="/set-background">
 						<div className="menu-item-wrapper">
 							<i className="fa fa-file-image-o menu-item" aria-hidden="true" title="Background Color"></i>

@@ -80,5 +80,32 @@ export const edit_stroke = (stroke) => ({
 	stroke
 });
 
+export const CROP = 'CROP';
+export const crop = () => ({
+	type: CROP
+}) 
+
+export const searchImg = query => dispatch =>{
+	const url = `https://api.gettyimages.com/v3/search/images?phrase=${query}`;
+	fetch(url, {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json',
+			'Api-Key': 'zegr8sckp828ess93vx56b6j'
+		}
+	})
+	.then(response => response.json())
+	.then(function(results){
+		dispatch(set_img_results(results));
+	})
+	.catch(err => console.log(err))
+}
+
+export const SET_IMG_RESULTS = 'SET_IMG_RESULTS';
+export const set_img_results = (results) => ({
+	type: SET_IMG_RESULTS,
+	results
+})
+
 
 

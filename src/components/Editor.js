@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions';
+import {getImgCtr} from '../js';
 
 import Menu from './Menu';
 import TextEditor from './TextEditor';
@@ -71,6 +72,13 @@ class Editor extends React.Component{
 		});
 	}
 
+	crop = () => {
+		let ctr = getImgCtr();
+		this.props.dispatch(actions.edit_posX(ctr.x));
+		this.props.dispatch(actions.edit_posY(ctr.y));
+		this.props.dispatch(actions.crop());
+	}
+
 	memeIt = () => {
 		let link = document.createElement('a');
 		link.download = 'MEMER';
@@ -101,9 +109,10 @@ class Editor extends React.Component{
 			<section className="editor">
 				<Menu />
 				<div className="upper-editor" id="canvasWrapper">
+					<div className="resize"></div>
 					<Canvas update={this.update} ref="canvas" />
 				</div>
-
+				<div onClick={this.crop}>CROP</div>
 				<div className="lower-editor">
 					<div className="toolbar-wrapper">
 						<article className="edit-text tool" onClick={this.toggleTextEditor}>

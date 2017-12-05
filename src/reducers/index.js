@@ -10,7 +10,9 @@ export const initialState = {
 	fontSize: '50',
 	strokeSize: '4',
 	posX: 100,
-	posY: 100
+	posY: 100,
+	crop: 0,
+	searchResults: ''
 }
 
 export const imageReducer = (state=initialState, action) => {
@@ -84,6 +86,16 @@ export const imageReducer = (state=initialState, action) => {
 		return Object.assign({}, state, {
 			imgURL: action.imgURL
 		});
+	}
+	else if(action.type === actions.CROP){
+		return Object.assign({}, state, {
+			crop: !state.crop
+		})
+	}
+	else if(action.type === actions.SET_IMG_RESULTS){
+		return Object.assign({}, state, {
+			searchResults: action.results
+		})
 	}
 	else{
 		return state;

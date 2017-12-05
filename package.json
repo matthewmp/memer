@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://mmpal78.github.io/memer/",
   "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-redux": "^5.0.6",
