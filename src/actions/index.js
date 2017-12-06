@@ -1,3 +1,5 @@
+import 'isomorphic-fetch';
+
 
 // Set the image URL
 export const SET_IMG_URL = 'SET_IMG_URL';
@@ -85,27 +87,66 @@ export const crop = () => ({
 	type: CROP
 }) 
 
-export const searchImg = query => dispatch =>{
-	const url = `https://api.gettyimages.com/v3/search/images?phrase=${query}`;
-	fetch(url, {
-		method: 'GET',
-		headers: {
-			'Content-Type': 'application/json',
-			'Api-Key': 'zegr8sckp828ess93vx56b6j'
-		}
-	})
-	.then(response => response.json())
-	.then(function(results){
-		dispatch(set_img_results(results));
-	})
-	.catch(err => console.log(err))
-}
-
-export const SET_IMG_RESULTS = 'SET_IMG_RESULTS';
-export const set_img_results = (results) => ({
-	type: SET_IMG_RESULTS,
-	results
+export const SET_CLIP = 'SET_CLIP';
+export const set_clip = (obj) => ({
+	type: SET_CLIP,
+	clip: obj
 })
 
+
+// export const searchImg = query => dispatch =>{
+// 	const url = `https://api.gettyimages.com/v3/search/images?phrase=${query}`;
+// 	fetch(url, {
+// 		method: 'GET',
+// 		headers: {
+// 			'Content-Type': 'application/json',
+// 			'Api-Key': 'zegr8sckp828ess93vx56b6j'
+// 		}
+// 	})
+// 	.then(response => response.json())
+// 	.then(function(results){
+// 		let count = results.result_count;
+// 		if(count <= 0){
+// 			dispatch(set_img_results(0));
+// 			return
+// 		}
+// 		dispatch(set_img_results(results));
+// 	})
+// 	.catch(err => console.log(err))
+// }
+
+// export const SET_IMG_RESULTS = 'SET_IMG_RESULTS';
+// export const set_img_results = (results) => ({
+// 	type: SET_IMG_RESULTS,
+// 	results
+// });
+
+// export const individualImg = id => dispatch =>{
+// 	if(id === false){
+// 		dispatch(set_prev_img(''));
+// 	}
+// 	else{
+// 		const url = `https://api.gettyimages.com/v3/images/?ids=${id}&fields=display_set`;
+// 		fetch(url, {
+// 			method: 'GET',
+// 			headers: {
+// 				'Content-Type': 'application/json',
+// 				'Api-Key': 'zegr8sckp828ess93vx56b6j'
+// 			}
+// 		})
+// 		.then(response => response.json())
+// 		.then(function(results){
+// 			let imgURL = results.images[0].display_sizes[0].uri;
+// 			dispatch(set_prev_img(imgURL));
+// 		})
+// 		.catch(err => console.log(err))
+// 	}
+// }
+
+// export const SET_PREV_IMG = 'SET_PREV_IMG';
+// export const set_prev_img = (prev) => ({
+// 	type: SET_PREV_IMG,
+// 	prev
+// });
 
 

@@ -15,7 +15,14 @@ export const loadCanvas = (state) => {
 
 		// Load Image
 		img = new Image();
+		img.crossOrigin = "Anonymous";
+
 		img.onload = function(){
+			// if(Object.keys(state.clip)[0] !== undefined){
+			// 	canvas.width = state.clip.w;
+			// 	canvas.height = state.clip.h;
+			// }
+			
 			let scaledImg = scale(img.width, img.height);
 
 			// Center Image
@@ -33,10 +40,37 @@ export const loadCanvas = (state) => {
 				imgX = 0;
 				imgY = 0;
 			}
-			console.log('Drawing ', scaledImg.width)
+
+
 			// Draw Image to Canvas
-			ctx.drawImage(this,imgX, imgY, scaledImg.width, scaledImg.height);
-			loadMeme(state);
+
+			if(Object.keys(state.clip)[0] !== undefined){
+				ctx.fillStyle = '#ff0000';
+				ctx.rect(state.clip.x, state.clip.y, state.clip.w, state.clip.h);
+				ctx.clip();
+
+				ctx.drawImage(this,imgX, imgY, img.width, img.height);	
+
+				// New Canvas
+				let testCanvas = document.getElementsByClassName('can2');
+				for(let i = 0; i<testCanvas.length; i++){
+					testCanvas[i].remove();
+				}
+				var nC = document.createElement('canvas');
+				nC.classList = 'can2';
+				var nCtx = nC.getContext('2d');
+				nC.width = state.clip.w;
+				nC.height = state.clip.h;
+				loadMeme(state);
+				nCtx.drawImage(canvas, -state.clip.x, -state.clip.y);
+				
+				document.body.appendChild(nC);
+			}
+			else{
+				ctx.drawImage(this,imgX, imgY, scaledImg.width, scaledImg.height);
+				loadMeme(state);
+			}
+			
 		}
 		img.src = state.dataURL;
 	}
@@ -127,4 +161,51 @@ export const getCtr = () => {
 // Get Centerish of Img
 export const getImgCtr = () => {
 	return {x: img.width/2, y: img.height/2}
+}
+
+// Cropping Funcs
+
+export const dragElement = (elem) => {	
+	let drag =  document.getElementById('dragger');
+    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    drag.onmousedown = dragMouseDown;
+ 
+        
+    function dragMouseDown(e){
+        e = e || window.event;
+
+        // Calc new position
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e){
+        e = e || window.event;
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+
+        // set new pos
+        
+        elem.style.top = (elem.offsetTop - pos2) + 'px';
+        elem.style.left = (elem.offsetLeft - pos1) + 'px';
+    }
+    
+    function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null;
+        document.onmousemove = null;
+  }
+}
+
+export const clip = () =>{
+	let cropper = document.getElementById('cropper');
+	let elem = cropper.getBoundingClientRect();
+	
+    return {
+    	x: elem.x, y: elem.y, w: elem.width -15 , h: elem.height -15
+    };
 }

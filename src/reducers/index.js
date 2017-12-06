@@ -12,7 +12,9 @@ export const initialState = {
 	posX: 100,
 	posY: 100,
 	crop: 0,
-	searchResults: ''
+	searchResults: true,
+	prev: '',
+	clip: {}
 }
 
 export const imageReducer = (state=initialState, action) => {
@@ -92,11 +94,22 @@ export const imageReducer = (state=initialState, action) => {
 			crop: !state.crop
 		})
 	}
-	else if(action.type === actions.SET_IMG_RESULTS){
+	else if(action.type === actions.SET_CLIP){
 		return Object.assign({}, state, {
-			searchResults: action.results
+			clip: action.clip
 		})
 	}
+	
+	// else if(action.type === actions.SET_IMG_RESULTS){
+	// 	return Object.assign({}, state, {
+	// 		searchResults: action.results
+	// 	})
+	// }
+	// else if(action.type === actions.SET_PREV_IMG){
+	// 	return Object.assign({}, state, {
+	// 		prev: action.prev
+	// 	})
+	// }
 	else{
 		return state;
 	}

@@ -5,6 +5,7 @@
 }
 
 .upper-editor{
+	position: relative;
 	display: flex;
 	width: 100%;
 	height: 70vh;
@@ -28,6 +29,27 @@
 
 #memed-img{
 	max-width: 100%;
+}
+
+.crop{
+	position: absolute;
+	bottom: 1px;
+	left: 50px;
+	width: 80px;
+	height: 50px;
+	background: orange;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 1.3em;
+	color: #fff;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	cursor: pointer;
+	border: 1px solid #fff;
+}
+
+.fa-crop{
+	line-height: 50px;
 }
 
 .lower-editor{
@@ -136,14 +158,16 @@
     border-radius: 50%;	
     background: #F26444;
     cursor: pointer;
-
-
 }
 
 .x-close span{
 	display: table-cell;
 	vertical-align: middle;
 	color: #fff;	
+}
+
+.can2{
+	display: none;
 }
 
 @media only screen and (max-width: 1080px){
@@ -224,6 +248,12 @@
 @media only screen and (max-height: 595px) {
 	.toolbar-wrapper{
 	  	top: 80%;
+	}
+
+	.crop{
+		width: 35px;
+		height: 35px;
+		line-height: 35px;
 	}
 }
 

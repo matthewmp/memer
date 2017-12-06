@@ -11,6 +11,7 @@ import FontColorEditor from './FontColorEditor';
 import Sliders from './Sliders';
 import Stroke from './Stroke';
 import Canvas from './Canvas';
+import Cropper from './Cropper';
 
 
 import '../css/editor.css';
@@ -26,7 +27,8 @@ class Editor extends React.Component{
 			showFontColor: false,
 			showSliders: false,
 			showStroke: false,
-			showResult: false
+			showResult: false,
+			showCropper: false
 		}
 	}
 
@@ -66,6 +68,12 @@ class Editor extends React.Component{
 		});
 	}
 
+	toggleCropper = () => {
+		this.setState({
+			showCropper: !this.state.showCropper
+		})
+	}
+
 	update = () => {
 		this.setState({
 			update: !this.state.update
@@ -83,6 +91,9 @@ class Editor extends React.Component{
 		let link = document.createElement('a');
 		link.download = 'MEMER';
 		let canvas = document.getElementById('canvas');
+		if(this.props.state.clip.x){
+			canvas = document.getElementsByClassName('can2')[0];
+		}
 		let imgURL = canvas.toDataURL("image/png");
 		link.href = imgURL;
 		link.setAttribute('target', '_blank');
@@ -91,9 +102,15 @@ class Editor extends React.Component{
 		this.props.dispatch(actions.set_meme_result(imgURL));
 		document.body.removeChild(link);
 		this.toggleResult();
+
+		this.props.dispatch(actions.set_clip({}));
+
+		this.state.showCropper ? this.toggleCropper() : console.log('');
 	}
 
 	render(){
+		console.log(this.props.state)
+		let cropper = this.state.showCropper ? <Cropper /> : undefined;
 		let textEditor = this.state.showTextEditor ? <TextEditor toggle={this.toggleTextEditor}/> : undefined;
 		let fontEditor = this.state.showFonts ? <Fonts toggle={this.toggleFont} /> : undefined;
 		let fontColorEditor = this.state.showFontColor ? <FontColorEditor toggle={this.toggleFontColor}/> : undefined;
@@ -110,9 +127,13 @@ class Editor extends React.Component{
 				<Menu />
 				<div className="upper-editor" id="canvasWrapper">
 					<div className="resize"></div>
+					{cropper}
 					<Canvas update={this.update} ref="canvas" />
+					<div className="crop" title="Crop" onClick={this.toggleCropper}>
+						<i className="fa fa-crop" aria-hidden="true"></i>
+					</div>
 				</div>
-				<div onClick={this.crop}>CROP</div>
+				
 				<div className="lower-editor">
 					<div className="toolbar-wrapper">
 						<article className="edit-text tool" onClick={this.toggleTextEditor}>
