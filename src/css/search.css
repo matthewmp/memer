@@ -97,11 +97,11 @@
 
 /*    Animations    */
 
-@keyframes fade {
+/*@keyframes fade {
 	0%{background: rgba(242, 100, 68, 0);}
 	
 	100%{background: rgba(242, 100, 68, 0.89);}
-}
+}*/
 
 @keyframes opacity {
 	0%{opacity: 0;}
