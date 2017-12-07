@@ -17,14 +17,14 @@
 }
 
 .crop-close{
-    background: orange !important;
+    background: rgba(10,10,10,0.7) !important;
+    top: 2px !important;
 }
 
 #cropIt, .undo-crop{
     position: absolute;
-    bottom: 0;
+    top: 0;
     line-height: 35px;
-    right: 20px;
     cursor: pointer;
     color: #fff;
     font-size: 1.3em;
@@ -33,6 +33,10 @@
 .undo-crop{
     width: 50px;
     left: 0;
+}
+
+#cropIt{
+    left: 50px;
 }
 
 .crop-message{
@@ -59,7 +63,7 @@
 #dragger{
     position: absolute;
     width: 100%;
-    bottom: 0;
+    top: 0;
     background: rgba(10,10,10,0.7);
     line-height: 40px;
     height: 40px;
