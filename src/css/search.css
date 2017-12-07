@@ -60,14 +60,22 @@
 
 .select-image{
 	position: absolute;
+	display: flex;
+    justify-content: center;
+    align-items: center;
     bottom: 0;
+    width: 20%;
+    height: 15%;
     max-width: 100px;
     min-width: 70px;
-    height: 40px;
+    min-height: 40px;
     background: #8EE4AF;
     font-family: 'Roboto';
-    line-height: 50px;
-    color: #222;
+    font-size: 1em;
+    font-weight: 800;
+    color: #333;
+    text-shadow: 1px 1px 1px #fff;
+    border: 3px solid#fff;
     border-top-right-radius: 10px;
     cursor: pointer;
     animation: opacity 5s;

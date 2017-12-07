@@ -20,7 +20,6 @@ class Cropper extends React.Component{
 	}
 
 	toggleMess = () => {
-		console.log('Toggle')
 		this.setState({
 			message: !this.state.message
 		})
@@ -41,14 +40,14 @@ class Cropper extends React.Component{
 	}
 
 	render(){
-		console.log(this.props.state.clip.x)
 		let message = this.state.message ? <CropMessage toggle={this.toggleMess} /> :  undefined;
 		return(
 			<div className="crop-wrapper" id="crop-wrapper" ref="cropper">
 
 		        <div className="cropper" id="cropper">
 		        	{message}
-		            <div className="dragger" id="dragger" >Drag Here</div>
+		        	<div className="x-close crop-close" onClick={this.props.toggle}><span>X</span></div>
+		            <div className="dragger" id="dragger" ><span>Drag Here</span></div>
 		            <div id="cropIt" onClick={this.cropIt}>
 		            	<i className="fa fa-check" aria-hidden="true"></i>
 		            </div>

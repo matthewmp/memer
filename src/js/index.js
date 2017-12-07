@@ -10,6 +10,9 @@ export const loadCanvas = (state) => {
 		
 
 		// Set Canvas Background Color
+		ctx.fillStyle = '#fff';
+		ctx.fillRect(0,0,canvas.width, canvas.height);
+		
 		ctx.fillStyle = state.bgColor;
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -18,10 +21,6 @@ export const loadCanvas = (state) => {
 		img.crossOrigin = "Anonymous";
 
 		img.onload = function(){
-			// if(Object.keys(state.clip)[0] !== undefined){
-			// 	canvas.width = state.clip.w;
-			// 	canvas.height = state.clip.h;
-			// }
 			
 			let scaledImg = scale(img.width, img.height);
 

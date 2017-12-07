@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import * as actions from '../actions';
 
@@ -59,9 +60,16 @@ class Upload extends React.Component{
 			<section className="upload-overlay">
 				<Menu />
 				<input type="file" accept="image/*" id="btn-file" onChange={this.fileChangeHandler} />
-				<div className="upload-btn-wrapper">
-					<button className="btn-upload btn-main" onClick={this.clickUpload}>Upload Image</button>
-					{iErr}
+				<div className="getting-started-wrapper">
+					<div className="upload-btn-wrapper">
+						<button className="btn-upload btn-main" onClick={this.clickUpload}>Upload Image</button>
+						{iErr}
+					</div>
+					<div className="search-btn-wrapper">
+						<Link to="/search">
+							<button className="btn-search btn-main">Search Image</button>
+						</Link>
+					</div>
 				</div>
 			</section>
 		)

@@ -110,7 +110,7 @@ class Editor extends React.Component{
 
 	render(){
 		console.log(this.props.state)
-		let cropper = this.state.showCropper ? <Cropper /> : undefined;
+		let cropper = this.state.showCropper ? <Cropper toggle={this.toggleCropper}/> : undefined;
 		let textEditor = this.state.showTextEditor ? <TextEditor toggle={this.toggleTextEditor}/> : undefined;
 		let fontEditor = this.state.showFonts ? <Fonts toggle={this.toggleFont} /> : undefined;
 		let fontColorEditor = this.state.showFontColor ? <FontColorEditor toggle={this.toggleFontColor}/> : undefined;

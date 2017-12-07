@@ -19,7 +19,7 @@ class Preview extends React.Component{
 			<div className="preview-wrapper">
 				<div className="x-close" onClick={this.props.toggle}><span>X</span></div>
 				<Img  id="imgPreview" src={this.props.src} />
-				<div className="select-image" onClick={this.setImage}>Select</div>
+				<div className="select-image" onClick={this.setImage}><span>Select</span></div>
 			</div>
 		)
 	}
