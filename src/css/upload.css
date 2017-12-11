@@ -1,0 +1,49 @@
+.upload-overlay{
+	position: absolute;
+	width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #8EE4AF;
+}
+
+.getting-started-wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.getting-started-wrapper button{
+    width: 150px;
+}
+
+.btn-upload{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right: 1px solid #fff;
+}
+
+.btn-search{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: 1px solid #fff;
+}
+
+.upload-btn-wrapper, .search-btn-wrapper{
+    display: inline-block; 
+}
+
+
+#btn-file{
+	display: none;
+}
+
+@media only screen and (max-width: 605px){
+  .btn-upload, .btn-search{
+    border-radius: 10px;
+    border: 0;
+    margin:10px;
+  }
+}

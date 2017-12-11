@@ -1,0 +1,6 @@
+canvas{
+	/*position: absolute;*/
+	display: block;
+	margin: auto;
+	border-bottom: 1px solid #ccc;
+}
