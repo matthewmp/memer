@@ -87,12 +87,3 @@
     display: none;
   }
 }
-
-@media only screen and (orientation: landscape){
-  .cropper{
-    display: none;
-  }
-  .crop{
-    display: none;
-  }
-}

@@ -12,6 +12,7 @@ import Sliders from './Sliders';
 import Stroke from './Stroke';
 import Canvas from './Canvas';
 import Cropper from './Cropper';
+import CropBtn from './CropBtn';
 
 
 import '../css/editor.css';
@@ -28,39 +29,51 @@ class Editor extends React.Component{
 			showSliders: false,
 			showStroke: false,
 			showResult: false,
-			showCropper: false
-		}
-	}
+			showCropper: false,
+			showCropperButton: true
+		};
+	};
+
+	componentDidMount(){
+		this.isIpad();
+		window.addEventListener('resize', this.isIpad);
+		
+	};
+
+	isIpad = () => {
+		navigator.appVersion.search(/iPad|iPhone|Mobile/) >= 0 ? 
+		this.setState({showCropperButton: false}) : this.setState({showCropperButton: true})
+	};
 
 	toggleTextEditor = () => {
 		this.setState({
 			showTextEditor: !this.state.showTextEditor
 		});
-	}
+	};
 
 	toggleFont = () => {
 		this.setState({
 			showFonts: !this.state.showFonts
 		});
-	}
+	};
 
 	toggleFontColor = () => {
 		this.setState({
 			showFontColor: !this.state.showFontColor
-		})
-	}
+		});
+	};
 
 	toggleSliders = () => {
 		this.setState({
 			showSliders: !this.state.showSliders
-		})
-	}
+		});
+	};
 
 	toggleStroke = () => {
 		this.setState({
 			showStroke: !this.state.showStroke
-		})
-	}
+		});
+	};
 
 	toggleResult = () => {
 		this.setState({
@@ -71,21 +84,21 @@ class Editor extends React.Component{
 	toggleCropper = () => {
 		this.setState({
 			showCropper: !this.state.showCropper
-		})
-	}
+		});
+	};
 
 	update = () => {
 		this.setState({
 			update: !this.state.update
 		});
-	}
+	};
 
 	crop = () => {
 		let ctr = getImgCtr();
 		this.props.dispatch(actions.edit_posX(ctr.x));
 		this.props.dispatch(actions.edit_posY(ctr.y));
 		this.props.dispatch(actions.crop());
-	}
+	};
 
 	memeIt = () => {
 		let link = document.createElement('a');
@@ -106,10 +119,10 @@ class Editor extends React.Component{
 		this.props.dispatch(actions.set_clip({}));
 
 		this.state.showCropper ? this.toggleCropper() : console.log('');
-	}
+	};
 
 	render(){
-		console.log(this.props.state)
+		let cropBtn = this.state.showCropperButton ? <CropBtn toggle={this.toggleCropper}/> : undefined;
 		let cropper = this.state.showCropper ? <Cropper toggle={this.toggleCropper}/> : undefined;
 		let textEditor = this.state.showTextEditor ? <TextEditor toggle={this.toggleTextEditor}/> : undefined;
 		let fontEditor = this.state.showFonts ? <Fonts toggle={this.toggleFont} /> : undefined;
@@ -129,9 +142,7 @@ class Editor extends React.Component{
 					<div className="resize"></div>
 					{cropper}
 					<Canvas update={this.update} ref="canvas" />
-					<div className="crop" title="Crop" onClick={this.toggleCropper}>
-						<i className="fa fa-crop" aria-hidden="true"></i>
-					</div>
+					{cropBtn}
 				</div>
 				
 				<div className="lower-editor">
