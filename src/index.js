@@ -12,6 +12,7 @@ import Background from './components/Background';
 import Editor from './components/Editor';
 
 
+
 ReactDOM.render(
 	<Provider store = {store}>
 		<HashRouter>
@@ -21,9 +22,6 @@ ReactDOM.render(
 				<Route exact path = '/search' component={Search} />
 				<Route exact path = '/set-background' component={Background} />
 				<Route exact path = '/editor' component={Editor} />
-				
-				
-				
 			</div>
 		</HashRouter>
 	</Provider>, document.getElementById('root')
