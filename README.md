@@ -27,7 +27,7 @@ React.js Capstone Project for [Thinkful.com](http://www.thinkful.com)
 <img src="https://github.com/mmpal78/memer/blob/master/wireframes/crop.png?raw=true" width="400" style="float: left; padding: 10px;" />
 
 ## Working Prototype
-[Memer](https://mmpal78.github.io/memer)
+[Memer](https://matthewmp.github.io/memer)
 
 ## Summary
 Memer is a meme generator / image awesomeifier.  Users can upload their own image or search for an image utilizing Getty Images API.  Select background color, font color, stroke size, text size, crop and download!
