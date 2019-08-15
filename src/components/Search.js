@@ -26,7 +26,7 @@ class Search extends React.Component{
 		let that = this;
 		e.preventDefault();
 		
-		const url = `https://api.gettyimages.com/v3/search/images?phrase=${query}`;
+		const url = `http://cors.io/?https://api.gettyimages.com/v3/search/images?phrase=${query}`;
 		fetch(url, {
 			method: 'GET',
 			headers: {
@@ -54,7 +54,7 @@ class Search extends React.Component{
 			that.setState({preview: ''})
 		}
 		else{
-			const url = `https://api.gettyimages.com/v3/images/?ids=${id}&fields=display_set`;
+			const url = `http://cors.io/?https://api.gettyimages.com/v3/images/?ids=${id}&fields=display_set`;
 			fetch(url, {
 				method: 'GET',
 				headers: {
