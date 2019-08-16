@@ -72,6 +72,7 @@ class Search extends React.Component{
 	}
 
 	render(){
+		console.log('test');
 		let spinner = this.state.spinner ? <Spinner /> : undefined;
 		let noResults = this.state.searchResults ? undefined : <div className="no-results">Hmm We Could Not Find Anything...</div>
 		let results;
