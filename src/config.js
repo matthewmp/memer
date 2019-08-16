@@ -1,0 +1,3 @@
+const KEY = '563492ad6f91700001000001e076a30512e6415b8e3128d0b8ed3fa8';
+
+export default KEY;
