@@ -6,7 +6,7 @@ import Img from './Img';
 import Preview from './Preview';
 import Menu from './Menu';
 import Spinner from './Spinner';
-
+import KEY from '../config';
 import '../css/search.css';
 
 class Search extends React.Component{
@@ -26,21 +26,21 @@ class Search extends React.Component{
 		let that = this;
 		e.preventDefault();
 		
-		const url = `http://cors.io/?https://api.gettyimages.com/v3/search/images?phrase=${query}`;
+		const url = `https://api.pexels.com/v1/search?query=${query}`;
 		fetch(url, {
 			method: 'GET',
 			headers: {
-				'Content-Type': 'application/json',
-				'Api-Key': 'zegr8sckp828ess93vx56b6j'
+				'Authorization': KEY
 			}
 		})
 		.then(response => response.json())
 		.then(function(results){
-			let count = results.result_count;
+			console.log('results: ', results)
+			let count = results.total_results;
 			if(count <= 0){
 				that.setState({searchResults: 0})
 				that.toggleSpinner();
-				return
+				return;
 			}
 			that.setState({searchResults: results})
 			that.toggleSpinner();
@@ -54,21 +54,24 @@ class Search extends React.Component{
 			that.setState({preview: ''})
 		}
 		else{
-			const url = `http://cors.io/?https://api.gettyimages.com/v3/images/?ids=${id}&fields=display_set`;
-			fetch(url, {
-				method: 'GET',
-				headers: {
-					'Content-Type': 'application/json',
-					'Api-Key': 'zegr8sckp828ess93vx56b6j'
-				}
-			})
-			.then(response => response.json())
-			.then(function(results){
-				let imgURL = results.images[0].display_sizes[0].uri;
+			console.log(this.state.searchResults, id)
+			const imgURL = this.state.searchResults.photos.filter((photo) => photo.id === id)[0].src.large;
+			// console.log(imgURL[0].src.large);
+		// 	const url = `http://cors.io/?https://api.gettyimages.com/v3/images/?ids=${id}&fields=display_set`;
+		// 	fetch(url, {
+		// 		method: 'GET',
+		// 		headers: {
+		// 			'Content-Type': 'application/json',
+		// 			'Api-Key': 'zegr8sckp828ess93vx56b6j'
+		// 		}
+		// 	})
+		// 	.then(response => response.json())
+		// 	.then(function(results){
+		// 		let imgURL = results.images[0].display_sizes[0].uri;
 				that.setState({preview: imgURL})
 				that.togglePrev();
-			})
-			.catch(err => console.log(err))
+		// 	})
+		// 	.catch(err => console.log(err))
 		}
 	}
 
@@ -85,15 +88,16 @@ class Search extends React.Component{
 	}
 
 	render(){
+		console.log(this.state)
 		let spinner = this.state.spinner ? <Spinner /> : undefined;
 		let noResults = this.state.searchResults ? undefined : <div className="no-results">Hmm We Could Not Find Anything...</div>
 		let results;
 		let preview = (this.state.preview && this.state.prev) ? <Preview src={this.state.preview} toggle={this.togglePrev} /> : undefined;
 		try{
-			if(this.state.searchResults.images){	
-				let imgArr = this.state.searchResults.images;
+			if(this.state.searchResults.photos){	
+				let imgArr = this.state.searchResults.photos;
 				results = imgArr.map((elem) => {
-					return <Img src={elem.display_sizes[0].uri} 
+					return <Img src={elem.src.small} 
 							key={elem.id} 
 							click={this.selectImg.bind(this, elem.id)} /> || undefined;
 				})
