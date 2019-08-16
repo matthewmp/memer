@@ -35,7 +35,6 @@ class Search extends React.Component{
 		})
 		.then(response => response.json())
 		.then(function(results){
-			console.log('results: ', results)
 			let count = results.total_results;
 			if(count <= 0){
 				that.setState({searchResults: 0})
@@ -54,24 +53,9 @@ class Search extends React.Component{
 			that.setState({preview: ''})
 		}
 		else{
-			console.log(this.state.searchResults, id)
 			const imgURL = this.state.searchResults.photos.filter((photo) => photo.id === id)[0].src.large;
-			// console.log(imgURL[0].src.large);
-		// 	const url = `http://cors.io/?https://api.gettyimages.com/v3/images/?ids=${id}&fields=display_set`;
-		// 	fetch(url, {
-		// 		method: 'GET',
-		// 		headers: {
-		// 			'Content-Type': 'application/json',
-		// 			'Api-Key': 'zegr8sckp828ess93vx56b6j'
-		// 		}
-		// 	})
-		// 	.then(response => response.json())
-		// 	.then(function(results){
-		// 		let imgURL = results.images[0].display_sizes[0].uri;
 				that.setState({preview: imgURL})
 				that.togglePrev();
-		// 	})
-		// 	.catch(err => console.log(err))
 		}
 	}
 
@@ -88,7 +72,6 @@ class Search extends React.Component{
 	}
 
 	render(){
-		console.log(this.state)
 		let spinner = this.state.spinner ? <Spinner /> : undefined;
 		let noResults = this.state.searchResults ? undefined : <div className="no-results">Hmm We Could Not Find Anything...</div>
 		let results;
